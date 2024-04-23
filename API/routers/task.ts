@@ -1,8 +1,6 @@
 import express from "express";
-import userModel from "../models/user";
 import taskModule from "../models/task";
 import auth, {RequestWithUser} from "../middleware/auth";
-import {HydratedDocument} from "mongoose";
 
 const taskRouter = express.Router();
 
