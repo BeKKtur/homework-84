@@ -1,5 +1,5 @@
 export interface User {
-    name: string;
+    username: string;
     password: string;
     token: string;
 }
@@ -9,3 +9,16 @@ export interface Task {
     title: string;
     status: string;
 }
+
+interface UserMethods {
+    checkPassword(password: string): Promise<boolean>;
+    generateToken(): void;
+}
+
+export type UserModel = Model<User, {}, UserMethods>
+
+interface TaskMethods {
+    username(username: string): Promise<boolean>;
+}
+
+export type TaskModel = Model<Task, {}, TaskMethods>
